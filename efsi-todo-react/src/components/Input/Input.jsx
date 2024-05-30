@@ -1,40 +1,37 @@
-import "./Input.css"
-import { useState } from "react";
-//import { getElementError } from "@testing-library/react";
+import React, { useState } from "react";
 
-export default function Input({tasks, setTasks}){
-    const [Tid,setTId] = useState(0);
+export default function Input({ tasks, setTasks }) {
+    const [inputValue, setInputValue] = useState("");
 
-    function addTask(id){
-        let content = document.getElementById(id)
-        if(content.value === '') { 
-            alert("Error en el ingreso de datos")   
-        }else{
-            setTId(Tid+1);
-            let newTask = crearNuevoObjeto(Tid, content.value)
-            let newTasks = [...tasks, newTask];
-            setTasks(newTasks);
+    function addTask() {
+        if (inputValue.trim() === "") {
+            alert("Error en el ingreso de datos");
+            return;
         }
-    }
+        
+        const newTask = {
+            id: tasks.length,
+            texto: inputValue,
+            date: new Date().toLocaleDateString(),
+            tachado: false,
+            fechaTachado: ""
+        };
 
-    function crearNuevoObjeto(Tid, txt){
-        let obj = {
-            id : Tid,
-            texto : txt, 
-            date : new Date().toLocaleDateString(),
-            tachado : false,
-            fechaTachado: ''
-        }
-        return obj;
+        setTasks([...tasks, newTask]);
+        setInputValue("");
     }
 
     return (
-        
-        <div class="filas">
-            <input type="text" id="input-box" placeholder="Agregá una nueva tarea"> </input> {/*tarea*/}
-            <button onclick={addTask(`input-box`)}>+</button>
+        <div className="filas">
+            <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder="Agregá una nueva tarea"
+            />
+            <button onClick={addTask}>+</button>
         </div>
-
     );
 }
+
 
