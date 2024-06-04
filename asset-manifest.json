@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/efsi-ToDo-React/static/css/main.38d8bf28.css",
+    "main.js": "/efsi-ToDo-React/static/js/main.726c156e.js",
+    "index.html": "/efsi-ToDo-React/index.html",
+    "main.38d8bf28.css.map": "/efsi-ToDo-React/static/css/main.38d8bf28.css.map",
+    "main.726c156e.js.map": "/efsi-ToDo-React/static/js/main.726c156e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38d8bf28.css",
+    "static/js/main.726c156e.js"
+  ]
+}
