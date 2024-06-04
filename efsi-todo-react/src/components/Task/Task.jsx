@@ -9,9 +9,9 @@ export function Task({ id, tasks, setTasks, texto, fecha, tachado, fechaTachado 
     };
 
     return (
-        <div className="cita" key={id}>
-            <p>Tarea: <span style={{ textDecoration: tachado ? 'line-through' : 'none' }}>{texto}</span></p>
-            <button onClick={() => tacharTask(id)}>Tachar</button>
+        <div className="tarea" key={id}>
+            <p><span onClick={() => tacharTask(id)} style={{ textDecoration: tachado ? 'line-through' : 'none' }}>{texto}</span></p>
+           
         </div>
     );
 }

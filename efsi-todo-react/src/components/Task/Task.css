@@ -1,0 +1,19 @@
+
+
+ul li{
+    list-style: none;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.tachado{
+    text-decoration:line-through;
+}
+
+.boton{
+    background-color: white;
+    padding: 3px 20px;
+}
