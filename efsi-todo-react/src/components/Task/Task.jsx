@@ -1,4 +1,5 @@
 import React from "react";
+import './Task.css';
 
 export function Task({ id, tasks, setTasks, texto, fecha, tachado, fechaTachado }) {
     const tacharTask = (id) => {
@@ -11,7 +12,7 @@ export function Task({ id, tasks, setTasks, texto, fecha, tachado, fechaTachado 
     return (
         <div className="tarea" key={id}>
             <p><span onClick={() => tacharTask(id)} style={{ textDecoration: tachado ? 'line-through' : 'none' }}>{texto} </span></p>
-            <p>{fecha} {fechaTachado}</p>
+            <p className="fechas">{fecha} {fechaTachado}</p>
            
         </div>
     );
