@@ -4,7 +4,7 @@ import './Task.css';
 export function Task({ id, tasks, setTasks, texto, fecha, tachado, fechaTachado }) {
     const tacharTask = (id) => {
         const tareaATachar = tasks.map(task =>
-            task.id === id ? { ...task, tachado: !task.tachado, fechaTachado: new Date().toLocaleDateString() } : task
+            task.id === id ? { ...task, tachado: !task.tachado, fechaTachado: new Date().toLocaleDateString()+ " " + new Date().toLocaleTimeString() } : task
         );
         setTasks(tareaATachar);
     };
