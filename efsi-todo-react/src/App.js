@@ -8,7 +8,8 @@ const borrarTodo = (tasks, setTasks) => {
   let a = []
   tasks=setTasks(a);
 };
-const calcularMasRapido = (tasks) => {
+
+const calcularMasRapido = (tasks, id) => {
   let tareaMasRapida = tasks[0];
   if (tasks.length === 0) return null; 
   for (let i = 1; i < tasks.length; i++) {
@@ -17,10 +18,7 @@ const calcularMasRapido = (tasks) => {
     }
   }
   console.log(tareaMasRapida.texto)
-  return (
-    <Task
-      texto={tareaMasRapida.texto}
-    />
+  document.querySelector(id).innerHTML += `<Task texto={tareaMasRapida.texto}`/>
   );
 };
 
@@ -37,7 +35,8 @@ function App() {
              <TaskList  tasks={tasks} setTasks={setTasks}/>
             </ul>
             <button class="botonEliminar" onClick={() => borrarTodo(tasks, setTasks)}>Eliminar todo</button>
-            <button class="botonEliminar" onClick={() => calcularMasRapido(tasks)}>Mas rapido en realizarse</button>
+            <button class="botonEliminar" onClick={() => calcularMasRapido(tasks, "masRap")}>Mas rapido en realizarse</button>
+            <p id="masRap"> </>
             
         </div>
     </div>
